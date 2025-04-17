@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1>Dashboard</h1>
+  <a href="{{ url_for('create_conference') }}">Create Conference</a>
+  <ul>
+    {% for conference in conferences %}
+      <li>{{ conference[1] }}: {{ conference[2] }}
+        <a href="{{ url_for('edit_conference', conference_id=conference[0]) }}">Edit</a>
+        <form action="{{ url_for('delete_conference', conference_id=conference[0]) }}" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

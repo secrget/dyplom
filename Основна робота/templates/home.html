@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h1>Conferences</h1>
+  <ul>
+    {% for conference in conferences %}
+      <li><a href="{{ url_for('view_conference', conference_id=conference[0]) }}">{{ conference[1] }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

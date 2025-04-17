@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Conference Details{% endblock %}
+
+{% block content %}
+    <h1>{{ conference[1] }}</h1>
+    <p><strong>Description:</strong> {{ conference[2] }}</p>
+    <p><strong>Date:</strong> {{ conference[4] }}</p>
+    <p><strong>Time:</strong> {{ conference[5] }}</p>
+    <p><strong>Speakers:</strong> {{ conference[6] }}</p>
+    <p><strong>Video Link:</strong> <a href="{{ conference[6] }}">{{ conference[7] }}</a></p>
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}
